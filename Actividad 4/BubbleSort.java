@@ -27,14 +27,14 @@ public class BubbleSort {
 
         int[] arr = new int[n];
 
-        // ingreso de datos
+        // ingresar datos
         for (int i = 0; i < n; i++) {
             System.out.print("Elemento " + (i + 1) + ": ");
             arr[i] = sc.nextInt();
         }
 
         System.out.println("Arreglo original: " + Arrays.toString(arr));
-
+	// ordenamiento
         bubbleSort(arr);
 
         System.out.println("Arreglo ordenado: " + Arrays.toString(arr));
