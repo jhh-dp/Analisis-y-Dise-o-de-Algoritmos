@@ -6,13 +6,13 @@ public class BubbleSort {
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
         int temp;
-        boolean deteccion = false;
+        boolean deteccion = false; // FIX IMPORTANTE
 
         for (int i = 0; i < n - 1; i++) {
+            deteccion = false;
 
-            for (int j = 0; j < n - 1; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    // intercambio
                     temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
@@ -20,13 +20,17 @@ public class BubbleSort {
                     deteccion = true;
                 }
             }
+
+            if (!deteccion) {
+                break;
+            }
         }
 
-        // mensaje final
+        // ahora ya es seguro usarla
         if (deteccion) {
-            System.out.println(" Se realizaron intercambios durante el ordenamiento");
+            System.out.println("Hubo intercambios durante el ordenamiento");
         } else {
-            System.out.println(" El arreglo ya estaba ordenado (sin intercambios)");
+            System.out.println("El arreglo ya estaba ordenado");
         }
     }
 
